@@ -1,0 +1,48 @@
+public class SwitchBoard {
+    public static boolean fuzzyEquals (double a, double b) {
+        double epsilon = 1E-14;
+        return Math.abs (a-b) < epsilon;
+    }
+
+    public static void main (String [] args) {
+        double r = Math.sqrt(2.0);
+        System.out.println(fuzzyEquals(r*r, 2.0));
+        gradelevel(23);
+        print (2);
+        print (2.0);
+    }
+
+    public static void gradelevel (int age) {
+        switch (age) {
+            case 6:
+                System.out.println("First Grade");
+//            without a break command, the program will print the next statement
+            case 7:
+                System.out.println("Early Elementary School");
+                break;
+            case 8:
+                System.out.println("Third Grade");
+                break;
+            case 9:
+                System.out.println("Fourth Grade");
+                break;
+            case 10:
+                System.out.println("Fifth Grade");
+                break;
+            case 11:
+            case 12:
+            case 13:
+                System.out.println("Middle School");
+                break;
+            default:
+                System.out.println("High School");
+        }
+    }
+    public static void print (int n) {
+        System.out.println("integer");
+    }
+    public static void print (double n) {
+        System.out.println("double");
+    }
+
+}
