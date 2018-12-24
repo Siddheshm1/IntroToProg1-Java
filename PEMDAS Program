@@ -1,0 +1,220 @@
+/**
+ * Week 9 Program - Basic academic methods.
+ *
+ * Date last modified: 11/04/2018
+ * @Author: Siddhesh Mahadeshwar
+ *
+ * CS1121, Fall 2018
+ * Lab Section 5
+ */
+
+
+
+public class Week9Program {
+    public static void main(String[] args) {
+        double x1 = 0;
+        double y1 = 0;
+        double x2 = 5;
+        double y2 = 5;
+        double result1 = getDistance(x1, y1, x2, y2);
+        System.out.println("getDistance: parameters are " + x1 + ", " + y1 + ", " + x2 + ", " + y2 + " and result is " + result1 + " AS EXPECTED");
+
+        int b = 5;
+        int c = 2;
+        boolean result2 = isDivisible(b,c);
+        System.out.println("isDivisible: parameters are " + b + ", " + c + " and result is " + result2 + " AS EXPECTED");
+
+        int d = 7;
+        boolean result3 = isEven(d);
+        System.out.println("isEven: parameter is " + d + " and result is " + result3 + " AS EXPECTED");
+
+        int a = 3;
+        int result = squareIt(a);
+        System.out.println("squareIt: parameter is " + a + ", result is " + result + " AS EXPECTED");
+
+        int e = 3;
+        int result4 = cubeIt(3);
+        System.out.println("cubeIt: parameter is " + e + " and result is " + result4 + " AS EXPECTED");
+
+        double f = 3.0;
+        double result5 = squareIt(f);
+        System.out.println("squareIt: parameter is " + f + " and result is " + result5 + " AS EXPECTED");
+
+        double g = 3.0;
+        double result6 = cubeIt(3.0);
+        System.out.println("cubeIt: parameter is " + g + " and result is " + result6 + " AS EXPECTED");
+
+        System.out.println("letterGrade: numbered grade is " + 89.0 + " and lettered grade is " + letterGrade(89.0) + " AS EXPECTED");
+
+        System.out.println(explainPEMDASLetter('A'));
+    }
+
+    /**
+     * Find the distance between 2 points
+     *
+     * @param x1 - first x value.
+     * @param y1 - first y value.
+     * @param x2 - second x value.
+     * @param y2 - second y value.
+     *
+     * @return the distance between the 2 points.
+     */
+
+    public static double getDistance(double x1, double y1, double x2, double y2) {
+
+        double distanceBetweenPoints = Math.sqrt(Math.pow(x1 + x2, 2) + Math.pow(y1 + y2, 2));
+        return distanceBetweenPoints;
+
+    }
+
+    /**
+     * Find out if a number is divisible by another.
+     *
+     * @param a - integer.
+     * @param b - the number to divide by.
+     *
+     * @return true if the integer is divisible, false if the integer is not divisible.
+     */
+
+    public static boolean isDivisible(int a, int b) {
+        int endValue = a % b; // finds int a mod int b
+        if (endValue == 0) {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
+    /**
+     * Find if the integer is an even number.
+     *
+     * @param a - number which will either be even or not.
+     *
+     * @return true if number is even, false if not even.
+     */
+
+    public static boolean isEven(int a) {
+
+        int n = a % 2; // find int a mod 2 to know if int is even
+        if (n == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * Find the squared value of the integer.
+     *
+     * @param n - the integer which needs to be squared.
+     *
+     * @return the squared integer.
+     */
+
+    public static int squareIt(int n) {
+
+        int a = n * n; // int n times int n to find int n squared
+        return a;
+
+    }
+
+    /**
+     * Find the cubed value of the integer.
+     *
+     * @param n - the integer which needs to be cubed.
+     *
+     * @return the cubed integer.
+     */
+
+    public static int cubeIt(int n) {
+
+        int a = n * n * n; // int n times int n times int n to find int n cubed
+        return a;
+    }
+
+    /**
+     * Find the squared value of the double.
+     *
+     * @param n - the double which needs to be squared.
+     *
+     * @return the squared double.
+     */
+
+    public static double squareIt(double n) {
+
+        double a = n * n; // double n times double n to find double n squared
+        return a;
+    }
+
+    /**
+     * Find the cubed value of the double.
+     *
+     * @param n - the double which needs to be cubed.
+     *
+     * @return the cubed double.
+     */
+
+    public static double cubeIt(double n) {
+
+        double a = n * n * n; // double n times double n times double n to find double n cubed
+        return a;
+    }
+
+    /**
+     * Find the corresponding letter grade to a numerical double.
+     *
+     * @param n - the double value grade.
+     *
+     * @return the letter grade that corresponds to the numerical double value.
+     */
+
+    public static char letterGrade(double n) {
+
+        if (n <= 65) { // parameter for a number below 65
+            return ('F');
+        } else if (n > 65 && n < 70) { // parameter for a number between 65 and 70
+            return ('D');
+        } else if (n >= 70 && n < 80) { // parameter for a number between 70 and 80
+            return ('C');
+        } else if (n >= 80 && n <= 89) { // parameter
+            return ('B');
+        } else  { // n > 89
+            return ('A');
+        }
+    }
+
+    /**
+     * Explains what PEMDAS stands for when a letter from the acronym is entered.
+     *
+     * @param a - the letter from the PEMDAS acronym for the definition or any letter in general.
+     *
+     * @return a short definition of what the letter stands for in the PEMDAS acronym.
+     */
+
+    public static String explainPEMDASLetter ( char a){
+        String P = "P in PEMDAS stands for Parenthesis";
+        String E = "E in PEMDAS stands for Exponents";
+        String M = "M in PEMDAS stands for Multiplication";
+        String D = "D in PEMDAS stands for Division";
+        String A = "A in PEMDAS stands for Addition";
+        String S = "S in PEMDAs stands for Subtraction";
+        String other = "This letter is not represented by PEMDAS";
+        if (a == 'P') {
+            return P;
+        } else if (a == 'E') {
+            return E;
+        } else if (a == 'M') {
+            return M;
+        } else if (a == 'D') {
+            return D;
+        } else if (a == 'A') {
+            return A;
+        } else if (a == 'S') {
+            return S;
+        } else {
+            return (other);
+        }
+
+    }
+}    
