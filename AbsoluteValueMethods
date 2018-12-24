@@ -1,0 +1,35 @@
+public class Tuesday {
+
+    public static double abs (double n) {
+        double result = n;
+        if ( n < 0 ) {
+            result *= -1;
+        }
+
+        return result;
+    }
+
+    public static void main (String [] args) {
+
+        System.out.println( abs(7));
+        System.out.println( abs(-7));
+        System.out.println(abs2(7));
+        System.out.println(abs2(-7));
+        System.out.println(abs3(-7));
+        System.out.println(abs3(7));
+    }
+
+    public static double abs2 (double n) {
+
+        if (n < 0) {
+            return -n;
+        } else {
+            return n;
+        }
+    }
+
+    public static double abs3 (double n) {
+
+        return (n < 0) ? -n : n;
+    }
+}
