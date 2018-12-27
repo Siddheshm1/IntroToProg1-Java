@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+public class Week9Program {
+    public static void main (String [] args){
+
+        Scanner input = new Scanner (System.in);
+        System.out.print ("Enter 3 numbers as radii for their areas : ");
+        double r1 = input.nextDouble ();
+        double r2 = input.nextDouble ();
+        double r3 = input.nextDouble ();
+
+//Asks for the 3 radius values.
+
+        int c1 = 1;
+        int c2 = 2;
+        int c3 = 3;
+
+//        # of circle
+
+        double area1 = Math.PI * Math.pow(r1,2);
+        double area2 = Math.PI * Math.pow(r2,2);
+        double area3 = Math.PI * Math.pow(r3,2);
+
+//        Area of a circle equation
+
+        double circum1 = 2 * Math.PI * r1;
+        double circum2 = 2 * Math.PI * r2;
+        double circum3 = 2 * Math.PI * r3;
+
+//Circumference of a circle equation
+
+        System.out.println ("CIRCLE        RADIUS        CIRCUMFERENCE AREA");
+        System.out.printf ("%-14d%-14f%-14f%-4f\n",c1,r1,circum1,area1);
+        System.out.printf ("%-14d%-14f%-14f%-4f\n",c2,r2,circum2,area2);
+        System.out.printf ("%-14d%-14f%-14f%-4f\n",c3,r3,circum3,area3);
+
+//        Specific spaces between each output enables the final output to allign
+//                right under the titles
+
+
+    }
+}
