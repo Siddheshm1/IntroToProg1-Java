@@ -1,0 +1,86 @@
+/**
+ * This program prints out all the possible combinations of ice creams flavors with their possible toppings.
+ *
+ * @author SiddheshDM
+ * Last Date Modified: 12/2/18
+ *
+ * CS1121 Fall 2018
+ */
+
+
+/**
+ * Errors:
+ * The counter is skipping a few numbers, but the actual number of lines are correct. There are 32 lines.
+ *
+ * Unable to incorporate pricing into the program. 
+ */
+
+public class IceCream {
+    /**
+     * This part of the code has all the strings with the possible flavors and toppings necesary for the code to run.
+     */
+    private String flavors[] = {"", "Chocolate", "Vanilla", "Strawberry"};
+    private String toppings[] = {"", "Chocolate Chips", "Whipped Cream", "Sprinkles"};
+    private int Counter = 0;
+
+    public void printMenu() {
+
+        /**
+         * This part of the code will print out all combinations of topping without the flavors added.
+         */
+
+        for (int i = 0; i < 4; i++) {
+            System.out.println(Counter  + " " + toppings[i]);
+            Counter++;
+            /**
+             * "Counter" produces the numbering that appears in front of each combination.
+             *
+             * Counter ++ increases the counter number so each new line appears with a new number.
+             */
+
+
+            for (int j = 1; j < i; j++) {
+                System.out.println(Counter + " " + toppings[i] + ", " + toppings[j]);
+                Counter++;
+
+                for (int k = i - 1; k > j; k--) {
+                    System.out.println(Counter + " " + toppings[i] + ", " + toppings[k] + ", " + toppings[j]);
+                    Counter++;
+                }
+            }
+        }
+
+        /**
+         * This part of the code will print out all possible combinations, flavors and toppings included.
+         */
+
+        for (int l = 1; l < flavors.length; l++) {
+            System.out.println(Counter + " " + flavors[l]);
+            Counter++;
+
+            for (int m = 1; m < 4; m++) {
+                System.out.println(Counter + " " + flavors[l] + ", " + toppings[m]);
+                Counter++;
+
+                for (int n = 1; n < m; n++) {
+                    System.out.println(Counter + " " + flavors[l] + ", " + toppings[m] + ", " + toppings[n]);
+                    Counter++;
+
+                    for (int o = m - 1; o > n; o--)
+                        System.out.println(Counter + " " + flavors[l] + ", " + toppings[m] + ", " + toppings[o] + ", " + toppings[n]);
+                    Counter++;
+                }
+            }
+        }
+    }
+
+    /**
+     * main method responsible for running the entire program
+     */
+
+    public static void main(String[]args){
+        IceCream obj = new IceCream();
+        obj.printMenu();
+    }
+}
+
