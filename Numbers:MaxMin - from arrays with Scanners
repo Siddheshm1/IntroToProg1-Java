@@ -1,0 +1,54 @@
+import java.util.Scanner;
+/**
+ * @author Siddhesh Mahadeshwar
+ * Date last modified: December 10, 2018
+ *
+ * CS1121 Fall 2018
+ *
+ * Coding Problem: Write a code that asks the user how many numbers he/she wants in his/her list. Then ask for
+ * the sufficient number of inputs that will fill all the spaces in the list. Next, output all the entered numbers.
+ * Finally, output what are the largest and smallest numbers amongst all the entered numbers. Use iterations, scanners,
+ * and make sure that your code looks aesthetically pleasing, with appropriate questions at appropriate times.
+ */
+
+public class a {
+
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in); // this part of the code asks for the size of the list of numbers.
+        System.out.println("How many numbers are there in your list?");
+        int newNumber = input.nextInt();
+        System.out.println("Enter the " + newNumber + " numbers from your list.");
+
+        double[] listOfNumbers = new double[newNumber]; // this part of the code fills in all the required elements in the list.
+        for (int i = 0; i < listOfNumbers.length; i++) {
+            listOfNumbers[i] = input.nextDouble();
+        }
+
+        System.out.print("\n" + "The numbers you entered are: "); // this part of the code outputs all the entered numbers in the list.
+        for (int i = 1; i <= newNumber; i++) {
+            System.out.print(listOfNumbers[i - 1] + "  ");
+        }
+
+        System.out.println("\n");
+        System.out.print("The largest number you entered is: ");
+        double max = listOfNumbers[0]; // this part of the code finds and outputs the largest number from the list.
+        for (int i = 0; i < newNumber; i++) {
+            if (max < listOfNumbers[i]) {
+                max = listOfNumbers[i];
+            }
+        }
+        System.out.print(max + "\n");
+
+        System.out.print("The smallest number you entered is: ");
+        double min = listOfNumbers[0]; // this part of the code finds and outputs the smallest number from the list.
+        for (int i = 0; i < newNumber; i++) {
+            if (min > listOfNumbers[i]) {
+                min = listOfNumbers[i];
+            }
+        }
+        System.out.print(min + "\n");
+    }
+
+}
+
