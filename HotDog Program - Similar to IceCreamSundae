@@ -1,0 +1,60 @@
+/**
+ * @author SiddheshDM
+ */
+
+
+public class HotDog {
+    public static void main(String[] args) {
+        int count = 0;
+        for (int hotdog = 0; hotdog <= 1; hotdog++) {
+            for (int bun = 0; bun <= 1; bun ++) {
+                for (int mustard = 0; mustard <= 1; mustard++) {
+                    for (int mayo = 0; mayo <= 1; mayo++) {
+                        for (int catsup = 0; catsup <= 1; catsup++) {
+                            String ingredients = "";
+                            int calories = 0;
+
+                            if (hotdog == 1) {
+                                if (!ingredients.isEmpty()) {
+                                    ingredients += ", ";
+                                }
+                                ingredients += "hotdog";
+                                calories += 140;
+                            }
+                            if (bun == 1) {
+                                if (!ingredients.isEmpty()) {
+                                    ingredients += ", ";
+                                }
+                                ingredients += "bun";
+                                calories += 120;
+                            }
+                            if (mustard == 1) {
+                                if (!ingredients.isEmpty()) {
+                                    ingredients += ", ";
+                                }
+                                ingredients += "mustard";
+                                calories += 20;
+                            }
+                            if (mayo == 1) {
+                                if (!ingredients.isEmpty()) {
+                                    ingredients += ", ";
+                                }
+                                ingredients += "mayo";
+                                calories += 100;
+                            }
+                            if (catsup == 1) {
+                                if (!ingredients.isEmpty()) {
+                                    ingredients += ", ";
+                                }
+                                ingredients += "catsup";
+                                calories += 30;
+                            }
+
+                            System.out.printf("%02d %-42s %3d calories\n", count++, ingredients, calories);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
