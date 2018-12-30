@@ -1,0 +1,73 @@
+/**
+ * This program produces random Haiku poems based on 2 possible themes.
+ *
+ * Date Last Modified: 11/24/2018
+ * @author SiddheshDM
+ *
+ * CS 1121, Fall 2018
+ * Lab Section 5
+ */
+
+public class ExtraCreditHaiku {
+
+    public static void main(String[] args) {
+
+        /**
+         * These are all arrays of nouns, verbs, prepositions, etc...
+         */
+
+        String[] firstNouns = {"sand", "sea", "stone", "rock", "wave", "beach", "coast"};
+        String[] capFirstNouns = {"Sand", "Sea", "Stone", "Rock", "Wave", "Beach", "Coast"};
+        String[] firstVerbss = {"scatters", "dissolves", "travels", "hardens"};
+        String[] articlesPreps = {"the", "on", "with"};
+        String[] articles2syl = {"on the", "with the", "by the", "over the"};
+        String[] themes = {"Oceans", "Sky"};
+        String[] adjectives = {"blue", "rough", "green", "high"};
+        String[] capAdj = {"Blue", "Rough", "Green", "High"};
+        String[] noun2syl = {"water", "summer", "wonder"};
+
+
+        String[] secondNouns = {"cloud", "day", "bird", "star", "moon", "crow"};
+        String[] capSecondNouns = {"Cloud", "Day", "Bird", "Star", "Moon", "Crow"};
+        String[] noun2secondSyl = {"winter", "summer", "wonder"};
+
+
+        int theme = (int) (Math.random() * themes.length);
+        System.out.println("\nA Haiku based on the theme: " + themes[theme] + "\n");
+
+        /**
+         * These are statements that will be used to randomly bring out elements from the arrays
+         */
+
+        int noun = (int) (Math.random() * (7 -1));
+        int noun1 = (int) (Math.random() * (7 -1));
+        int noun2 = (int) (Math.random() * (7 -1));
+        int noun3 = (int) (Math.random() * (7 -1));
+        int noun4 = (int) (Math.random() * (3 -1));
+        int verbs = (int) (Math.random() * (4 -1));
+        int verbs1 = (int) (Math.random() * (4 -1));
+        int verb = (int) (Math.random() * (4 -1));
+        int preps = (int) (Math.random() * (3 -1));
+        int artic = (int) (Math.random() * (4 -1));
+        int adj = (int) (Math.random() * (4 -1));
+        int capadjs = (int) (Math.random() * (4 -1));
+
+        /**
+         * This is the main part of the program that produces the entire poem according to the required format.
+         */
+
+        if (themes[theme].equals(themes[0])) {
+            System.out.printf(capFirstNouns[noun] + " " + firstVerbss[verbs] + " " + articlesPreps[preps]
+                    + " " + firstNouns[noun1] + "\n" + capFirstNouns[noun2] + " " + firstVerbss[verb] + " "
+                    + articles2syl[artic] + " " + adjectives[adj] + " " + firstNouns[noun3] + "\n"
+                    + capAdj[capadjs] + " " + noun2syl[noun4] + " " + firstVerbss[verbs1] + "\n\n\n\n\n");
+        } else {
+            System.out.printf(capSecondNouns[noun] + " " + firstVerbss[verbs] + " " + articlesPreps[preps]
+                    + " " + secondNouns[noun1] + "\n" + capSecondNouns[noun2] + " " + firstVerbss[verb] + " "
+                    + articles2syl[artic] + " " + adjectives[adj] + " " + secondNouns[noun3] + "\n"
+                    + capAdj[capadjs] + " " + noun2secondSyl[noun4] + " " + firstVerbss[verbs1] + "\n\n\n\n\n");
+
+        }
+
+    }
+}
