@@ -1,0 +1,25 @@
+
+public class ex4 {
+
+    public static void main (String [] args) {
+        System.out.println(equalTest(10));
+        System.out.println(testFloatingPoint(10.0,9.9999999999999999999));
+
+    }
+
+    public static boolean equalTest (int n) {
+
+        if (n == 10) {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
+    public static boolean testFloatingPoint (double a, double b) {
+        double epsilon = 1E-14;
+        return Math.abs (a-b) < epsilon;
+    }
+}
+
