@@ -1,0 +1,91 @@
+/**
+ * The program is an adaptation of the original MadLibs and functions exactly that way by taking inputs from the user
+ * plugging them into parts of a text file that has been created before hand. The program creates an interesting story
+ * based on the words that have been provided.
+ *
+ * @author: Siddhesh Mahadeshwar
+ *
+ */
+
+import java.io.*;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class MadLibs {
+
+    /**
+     * @param filename - used to take input from the user which will later be used for the story.
+     * @param list - used to make a list of all the required inputs from the user.
+     */
+
+    public static void loadMadLib(String filename, ArrayList<String> list) {
+
+        File file = new File(filename);
+        Scanner input = null;
+
+        try {
+            input = new Scanner(file);
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        while (input.hasNext()) {
+            list.add(input.next());
+        }
+    }
+
+    /**
+     * @param list - takes input from the user for parts of the story.
+     */
+
+    public static void fillMadLib(ArrayList<String> list) {
+        Scanner kin = new Scanner(System.in);
+        String word = "";
+
+        for (int x = 0; x < list.size(); x++) {
+            if (list.get(x).contains("<")) {
+                System.out.println("Please enter a " + list.get(x));
+                word = kin.nextLine();
+                list.remove(x);
+                list.add(x, word);
+            }
+        }
+    }
+
+    /**
+     * @param list - responsible for printing the MadLib story.
+     */
+
+    public static void printMadLib(ArrayList<String> list) {
+        int counter = 0;
+        for (int i = 0; i < list.size(); i++) {
+            counter += list.get(i).length();
+            if (counter >= 40) {
+                counter = 0;
+                System.out.println();
+            }
+            System.out.print(list.get(i) + " ");
+        }
+    }
+
+    /**
+     * this method brings all parts of the code together.
+     */
+
+    public static void playMadLib() {
+        ArrayList<String> list = new ArrayList<String>();
+        loadMadLib("tarzan.dat", list);
+        fillMadLib(list);
+        printMadLib(list);
+    }
+
+    /**
+     * @param args - main method
+     *             responsible for executing the entire program.
+     */
+
+    public static void main(String[] args) {
+        playMadLib();
+    }
+}
