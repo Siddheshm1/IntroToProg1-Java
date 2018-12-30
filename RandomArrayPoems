@@ -1,0 +1,93 @@
+/**
+ * This program produces random poems based on random themes.
+ *
+ * Date Last Modified: 11/23/2018
+ * @author SiddheshDM
+ *
+ * CS 1121, Fall 2018
+ * Lab Section 5
+ */
+
+public class Week10Program {
+
+    public static void main(String[] args) {
+
+        /**
+         * All strings for all possible words are initialized and written here.
+         */
+
+        String[] themes = {"Einstein", "Memory", "Dreams"};
+        String[] adjectives = {"Quiet", "Strong", "Deadly", "Infamous", "Unforgiving"};
+        String[] nouns = {"flames", "wonders", "lions", "machines", "computers", "monsters", "ptolemy", "fears", "clouds"};
+        String[] capNouns = {"Flames", "Wonders", "Lions", "Machines", "Computers", "Monsters", "Ptolemy", "Fears", "Clouds"};
+        String[] prepositions = {"for", "with", "on", "at", "with", "over", "by"};
+        String[] thematicEnding = {"His knowledge lives forever", "Memories are priceless", "Dreams can become reality"};
+        String gl = "intelligence";
+        String mm = "memory";
+        String pd = "nightmare";
+        String[] capVerbs = {"Brings into", "Blows down", "Evolves into", "Flies into", "Passes into"};
+        String[] singleVerbs = {"bring into", "blow down", "evolve into", "fly into", "pass into"};
+
+
+        /**
+         * These thematic titles will repeat every time a specific theme is called.
+         */
+
+        String[] thematic_titles = {"GENIUS LEGEND", "MY MEMORY", "PASSING DREAMS"};
+
+        /**
+         * This section randomizes the selection of words from arrays multiple
+         * times so that the same noun or verb does not repeat in the poem
+         * unless it is a coincidence.
+         */
+
+        int theme = (int) (Math.random() * themes.length);
+        System.out.println("\nA Poem based on the theme: " + themes[theme] + "\n");
+        int adjective = (int) (Math.random() * 5);
+        int noun = (int) (Math.random() * 9);
+        int noun1 = (int) (Math.random() * 9);
+        int noun2 = (int) (Math.random() * 9);
+        int noun3 = (int) (Math.random() * 9);
+        int noun4 = (int) (Math.random() * 9);
+        int noun5 = (int) (Math.random() * 9);
+        int noun6 = (int) (Math.random() * 9);
+        int noun7 = (int) (Math.random() * 9);
+        int noun8 = (int) (Math.random() * 9);
+        int noun9 = (int) (Math.random() * 9);
+        int noun10 = (int) (Math.random() * 9);
+        int noun11 = (int) (Math.random() * 9);
+        int verb = (int) (Math.random() * 5);
+        int verb1 = (int) (Math.random() * 5);
+        int verb2 = (int) (Math.random() * 5);
+        int verb3 = (int) (Math.random() * 5);
+        int verb4 = (int) (Math.random() * 5);
+        int verb5 = (int) (Math.random() * 5);
+        int preposition = (int) (Math.random() * 7);
+
+        /**
+         * These if else statements run the entire program and follow
+         * the correct formatting, with spacings, capitalization, and skipping
+         * lines.
+         */
+
+        if (themes[theme].equals(themes[0])) {
+            System.out.printf(thematic_titles[0] + "\n" + adjectives[adjective] + " " + gl + "\n" +
+                    capVerbs[verb] + " " + nouns[noun] + "\n" + capNouns[noun1] +
+                    " " + prepositions[preposition] + " " + nouns[noun2] +
+                    " " + singleVerbs[verb1] + " " + nouns[noun3] + "\n" + "        " +
+                    thematicEnding[0] + "\n\n"); // The if statement for the first possibility.
+        } else if (themes[theme].equals(themes[1])) {
+            System.out.printf(thematic_titles[1] + "\n" + adjectives[adjective] + " " + mm + "\n" +
+                    capVerbs[verb2] + " " + nouns[noun4] + "\n" + capNouns[noun5] +
+                    " " + prepositions[preposition] + " " + nouns[noun6] +
+                    " " + singleVerbs[verb3] + " " + nouns[noun7] + "\n" + "        " +
+                    thematicEnding[1] + "\n\n"); // The else if statement for the second possibility.
+        } else {
+            System.out.printf(thematic_titles[2] + "\n" + adjectives[adjective] + " " + pd + "\n" +
+                    capVerbs[verb4] + " " + nouns[noun8] + "\n" + capNouns[noun9] +
+                    " " + prepositions[preposition] + " " + nouns[noun10] +
+                    " " + singleVerbs[verb5] + " " + nouns[noun11] + "\n" + "        " +
+                    thematicEnding[2] + "\n\n"); // The else statement for the remaining third possibility.
+        }
+    }
+}
