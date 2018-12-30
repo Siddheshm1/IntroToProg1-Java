@@ -1,0 +1,51 @@
+/**
+ * @author SiddheshDM
+ * CS 1121
+ * 8th November 2018
+ */
+
+public class Curses {
+    public String[] nouns = {
+            "an enraged camel", "The Donald",
+            "Bernie Sanders", "a thousand fleas",
+            "an ancient philosopher", "a cocker spaniel",
+            "the Eiffel Tower", "a cowardly moose",
+            "the silent majority", "a deranged professor",
+            "a zombie graduate student"
+    };
+
+
+public String [] verbs = {"beat up","drown","sink", "strangle", "annihilate", "bless", "reject", "crush", "raise","remove", "eradicate"};
+
+
+public String [] objects = {"garden", "backside", "house", "car", "youth", "life", "freedom", "brain", "nose", "foot", "stomach"};
+
+
+    public String getRandom(String[] array) {
+        double a = (Math.random()*array.length);
+        int random = (int)a;
+        return (array[random]);
+
+    }
+
+
+    public String curse() {
+        String nouns1 = getRandom(nouns);
+        String verbs1 = getRandom(verbs);
+        String objects1 = getRandom(objects);
+        return String.format("May %s %s your %s!", nouns1, verbs1, objects1);
+    }
+
+
+    public void printCurse() {
+        System.out.println(curse());
+
+    }
+
+    public static void main(String[] args) {
+        Curses self = new Curses();
+        self.printCurse();
+    }
+
+}
+
