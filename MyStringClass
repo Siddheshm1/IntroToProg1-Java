@@ -1,0 +1,73 @@
+/**
+ * @author SiddheshDM
+ * Date last modified: December 9, 2018
+ * CS1121 Fall 2018
+ */
+
+public class MyString {
+
+    char[] x;
+
+    public MyString(char[] chars) {
+        x = chars; // assigns entered chars to array x
+
+    }
+
+    public char[] getX() {
+        return x;
+
+    }
+
+    public void setX(char[] chars) {
+        x = chars;
+    }
+
+    public char charAt(int index) {
+        return x[index]; // returns the element from a specific index in array x
+
+    }
+
+    public int length() {
+        return x.length; // returns the length of x
+
+    }
+
+    public MyString substring(int begin, int end) {
+        char[] y = {};
+        for (int i = 0; i <= end; i++) {
+            y[i] = x[begin + i];
+        }
+
+        MyString abc = new MyString(y);
+        return abc; // returns all elements from the starting index to the ending index
+
+    }
+
+    public MyString toLowerCase() {
+        char[] temporary = x;
+        for (int j = 0; j < temporary.length; j++) {
+            temporary[j] = Character.toLowerCase(temporary[j]);
+        }
+        MyString lowercase = new MyString(temporary);
+        return lowercase;
+    }
+
+    public boolean equals(MyString s) {
+        boolean equalsss = true;
+        char[] testVariable = s.getX();
+        if (testVariable.length == x.length) {
+            for (int i = 0; i < testVariable.length; i++) {
+                if (testVariable[i] != x[i]) {
+                    equalsss = false;
+                }
+            }
+        } return equalsss;
+    }
+
+    public static MyString valueOf(int i) {
+        char[] finalresult = {(char) i};
+        MyString abcd = new MyString(finalresult);
+        return abcd;
+    }
+}
+
